@@ -3,10 +3,8 @@
 
 def increases(items)
     increases=0
-    last_value=UInt32::MAX
-    items.each do |i|
-        increases+=1 if i>last_value
-        last_value=i
+    items.each_cons_pair do |a,b|
+        increases+=1 if b>a
     end
     increases
 end
