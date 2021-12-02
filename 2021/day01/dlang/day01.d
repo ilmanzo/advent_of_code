@@ -1,4 +1,4 @@
-import std.algorithm, std.stdio, std.string, std.conv, std.range;
+import std.algorithm, std.stdio, std.conv, std.range;
 
 pure int increases(const int[] arr) {
     auto prev=int.max;
