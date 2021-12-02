@@ -1,5 +1,5 @@
-# advent_of_code
-this repository contains some exercises from "Advent of Code" 
+# my Advent of Code
+this repository contains some small exercises from "Advent of Code" 
 
 https://adventofcode.com/
 
