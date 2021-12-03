@@ -29,7 +29,7 @@ int part1(string[] input)
 
 string reduce(string[] input, bool flag)
 {
-    auto result=input.dup();
+    auto result=input.dup;
     auto i=0;
     while(result.length>1) {
         auto bitstring=majorityBits(result,flag);
@@ -39,6 +39,7 @@ string reduce(string[] input, bool flag)
     return result[0];
 }
 
+// TODO needs some debugging
 int part2(string[] input)
 {
     auto oxygen=to!int(reduce(input,true),2);
@@ -50,5 +51,5 @@ void main()
 {
     auto input=File("../input.txt").byLine().map!(to!string).array;
     input.part1.writeln;
-    input.part2.writeln;
+    //input.part2.writeln;
 }
