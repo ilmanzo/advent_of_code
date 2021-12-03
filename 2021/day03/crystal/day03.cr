@@ -5,9 +5,10 @@ class BitCounter
         (0..11).each do
             @count << Hash(Char,Int32).new(0)
         end
+        self.count
     end
 
-    def count
+    private def count
         @input.each do |s|
             s.each_char_with_index do |c,i|
                 @count[i][c]+=1
@@ -35,20 +36,18 @@ class BitCounter
 end
 
 def filter(array,flag)
-    result=array.clone
     p=0
-    while result.size>1
-        b=BitCounter.new(result)
-        b.count
+    while array.size>1
+        b=BitCounter.new(array)
         if flag==:most
             bitstring=b.most_frequent_bitstring
         else
             bitstring=b.less_frequent_bitstring
         end
-        result.select!{|s| s[p]==bitstring[p]}
+        array.select!{|s| s[p]==bitstring[p]}
         p+=1
     end
-    return result[0].to_i(base: 2)
+    return array[0].to_i(base: 2)
 end
 
 input=Array(String).new
@@ -57,13 +56,13 @@ File.each_line("../input.txt") do |line|
 end
 
 b=BitCounter.new(input)
-b.count
+
 gamma=b.most_frequent_bitstring.to_i(base: 2)
 epsilon=b.less_frequent_bitstring.to_i(base: 2)
 
 puts "Part1: gamma=#{gamma}, epsilon=#{epsilon}, product=#{gamma*epsilon}"
 
-oxygen=filter(input,:most)
+oxygen=filter(input.clone,:most)
 co2=filter(input,:less)
 
 puts "Part2: oxygen=#{oxygen}, co2=#{co2}, product=#{oxygen*co2}"
