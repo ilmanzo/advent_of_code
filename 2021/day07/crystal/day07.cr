@@ -4,13 +4,13 @@ def sum_to(n)
 end
 
 def part1(input)
-    (input.min..input.max).each.map do |i| 
+    (input.min..input.max).map do |i| 
         input.map { |n| (n-i).abs }.sum 
     end.min
 end
 
 def part2(input)
-    (input.min..input.max).each.map do |i| 
+    (input.min..input.max).map do |i| 
         input.map { |n| sum_to((n-i).abs) }.sum 
     end.min
 end
