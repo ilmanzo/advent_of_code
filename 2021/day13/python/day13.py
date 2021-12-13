@@ -5,17 +5,15 @@ def parse_data():
     folds = [(axis[-1], int(val)) for fold in input[1].splitlines() for axis, val in [fold.split('=')]]
     return points, folds
 
-def fold(points,folds):
-    first=True
-    for ax, v in folds:
-        for i, (x, y) in enumerate(points):
-            if ax == 'x' and x > v:
-                points[i] = (2 * v - x, y)
-            elif ax == 'y' and y > v:
-                points[i] = (x, 2 * v - y)
-        if first:
-            print(len(set(points))) # count unique points after first fold
-            first=False    
+def fold(points,axis,pos):
+    for i, (x,y) in enumerate(points):
+        if axis=='x' and x>pos:
+            points[i] = (2*pos-x,y)
+            continue
+        if axis=='y' and y>pos:
+            points[i] = (x,2*pos-y)
+
+
 
 def draw(points): 
     for y in range(10):
@@ -27,5 +25,11 @@ def draw(points):
         print()
 
 points,folds=parse_data()
-fold(points,folds)
+first=True
+for axis, pos in folds:
+    fold(points,axis,pos)
+    # count unique points after first fold
+    if first:
+        print(len(set(points))) 
+        first=False    
 draw(points)
