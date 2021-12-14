@@ -10,10 +10,10 @@ class Day14
       next if line.size == 0
       if @template.size == 0
         @template = line.chars
-      else
-        pair, insertion = line.split(" -> ")
-        @instructions[{pair[0], pair[1]}] = insertion[0]
+        next
       end
+      pair, insertion = line.split(" -> ")
+      @instructions[{pair[0], pair[1]}] = insertion[0]
     end
     @template.each_cons_pair { |a, b| @counts[{a, b}] += 1 }
   end
@@ -27,7 +27,7 @@ class Day14
 
   def step
     old = @counts.dup
-    @counts = Hash(Pair, UInt64).new(0)
+    @counts.clear
     old.each do |(a, b), v|
       found = @instructions[{a, b}]
       @counts[{a, found}] += v
