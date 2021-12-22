@@ -1,5 +1,5 @@
 var turn=0
-var players = [6,8] 
+var players = [6,8] # from input.txt
 var scores = [0,0]
 var rolls=0
 var dice=0
