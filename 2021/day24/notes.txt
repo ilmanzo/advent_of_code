@@ -1,0 +1,40 @@
+row div check offset
+0   1   13    14
+1   1   12    8
+2   1   11    5
+3   26  0     4
+4   1   15    10
+5   26  -13   13
+6   1   10    16
+7   26  -9    5
+8   1   11    6
+9   1   13    13
+10  26  -14   6
+11  26  -3    7
+12  26  -2    13
+13  26  -14   3
+
+push input[0]+14
+push input[1]+8
+push input[2]+5
+pop. must have input[3]==popped_value
+push input[4]+10
+pop. must have input[5]==popped_value-13
+push input[6]+16
+pop. must have input[7]==popped_value-9
+push input[8]+16
+push input[9]+13
+pop. must have input[10]==popped_value-14
+pop. must have input[11]==popped_value-3
+pop. must have input[12]==popped_value-2
+pop. must have input[13]==popped_value-14
+
+
+part1:
+input[3]==input[2]+5  -> i[3]==9, i[2]==4
+input[5]==input[4]-3  -> i[5]==6, i[4]==9
+input[7]==input[6]+7  -> i[7]==9, i[6]==2
+input[10]==input[9]-1 -> i[10]==8, i[9]==9
+
+
+
