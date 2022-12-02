@@ -5,25 +5,25 @@ const
     X = ord('X')
 
 # returns the move I need to do in order to win m
-proc win(m: int): int = (m+1) mod 3
+func win(m: int): int = (m+1) mod 3
 
 # returns the move I need to do in order to lose m
-proc lose(m: int): int =
+func lose(m: int): int =
     result = 2
     if m > 0: result = m-1
 
-proc score(other, me: int): int =
+func score(other, me: int): int =
     result = me+1 # base value is my move
     if other == me:
         result+=3 # draw match
     elif win(other) == me:
         result+=6 # won match
 
-proc part1(pl: seq[char]): int =
+func part1(pl: seq[char]): int =
     score(int(pl[0])-A, int(pl[1])-X)
 
 # X = lose, Y=draw, Z=win
-proc part2(pl: seq[char]): int =
+func part2(pl: seq[char]): int =
     let other = int(pl[0])-A
     case pl[1]:
         of 'X': return score(other, other.lose)
