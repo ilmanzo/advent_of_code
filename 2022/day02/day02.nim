@@ -1,30 +1,19 @@
 import strutils, sequtils
 # 0 = rock, 1=paper, 2=scissors
 const
-    ROCK = 1
-    PAPER = 2
-    SCISSORS = 3
-    A = ord('A')-1
-    X = ord('X')-1
+    A = ord('A')
+    X = ord('X')
 
 # returns the move I need to do in order to win m
-proc win(m: int): int =
-    case m:
-        of ROCK: return PAPER
-        of PAPER: return SCISSORS
-        of SCISSORS: return ROCK
-        else: discard
+proc win(m: int): int = (m+1) mod 3
 
 # returns the move I need to do in order to lose m
 proc lose(m: int): int =
-    case m:
-        of ROCK: return SCISSORS
-        of PAPER: return ROCK
-        of SCISSORS: return PAPER
-        else: discard
+    result = 2
+    if m > 0: result = m-1
 
 proc score(other, me: int): int =
-    result = me # base value is my move
+    result = me+1 # base value is my move
     if other == me:
         result+=3 # draw match
     elif win(other) == me:
