@@ -17,7 +17,7 @@ proc score(other, me: int): int =
     if other == me:
         result+=3 # draw match
     elif win(other) == me:
-        result+=6
+        result+=6 # won match
 
 proc part1(pl: seq[char]): int =
     score(int(pl[0])-A, int(pl[1])-X)
