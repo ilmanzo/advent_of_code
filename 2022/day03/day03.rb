@@ -19,14 +19,6 @@ def part2(lines)
     end.sum
 end
 
-
-
 input = File.read("input.txt").split("\n")
 p part1 input 
 p part2 input
-
-
-
-
-
-
