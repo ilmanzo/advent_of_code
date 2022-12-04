@@ -20,5 +20,5 @@ def part2(lines)
 end
 
 input = File.read("input.txt").split("\n")
-p part1 input 
+p part1 input
 p part2 input
