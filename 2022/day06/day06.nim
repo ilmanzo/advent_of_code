@@ -1,8 +1,7 @@
 import std/sets
 
 func isunique(s: string): bool =
-    let s1 = s.toHashSet
-    s1.len == s.len
+    s.toHashSet.len == s.len
 
 proc findStartOfPacket(input: string, n: int): int =
     let start = n-1
