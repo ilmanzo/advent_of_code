@@ -13,10 +13,3 @@ proc findStartOfPacket(input: string, n: int): int =
 let input = readFile("input.txt")
 echo "Part1=", findStartOfPacket(input, 4)
 echo "Part2=", findStartOfPacket(input, 14)
-
-
-
-
-
-
-
