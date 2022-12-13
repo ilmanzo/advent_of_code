@@ -1,8 +1,8 @@
 instr_cycles = { 'addx' => 2, 'noop' => 1 }
 x = [1]
 
-File.readlines('input.txt').each do |line|
-  instr, value = line.strip.split
+File.readlines('input.txt', chomp: true).each do |line|
+  instr, value = line.split
   cycles = instr_cycles[instr]
   1.upto(cycles) do |c|
     x << (c == cycles ? x.last + value.to_i : x.last)
