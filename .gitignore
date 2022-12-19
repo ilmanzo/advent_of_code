@@ -1,4 +1,4 @@
-# Generated files for python projects
+.mypy_cache/
 __pycache__/
 *.py[cod]
 2021/day21/nim/day21
@@ -6,3 +6,5 @@ __pycache__/
 input.txt
 # Generated files for rust projects
 target/
+debug/
+
