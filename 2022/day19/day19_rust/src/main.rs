@@ -57,7 +57,7 @@ impl State {
 }
 
 // use BFS to find out max geodes a blueprint can give
-fn max_geodes(bp: Blueprint, time: i32) -> i32 {
+fn max_geodes(bp: &Blueprint, time: i32) -> i32 {
     let max_ore_cost = *[
         bp.ore_ore_cost,
         bp.clay_ore_cost,
@@ -138,7 +138,7 @@ fn main() {
     let p1: i32 = blueprints
         .iter()
         .enumerate()
-        .map(|(i, &b)| (i as i32 + 1) * max_geodes(b, 24))
+        .map(|(i, &b)| (i as i32 + 1) * max_geodes(&b, 24))
         .sum();
     let elapsed = now.elapsed();
     println!("Part1={p1}");
@@ -147,7 +147,7 @@ fn main() {
     let p2: i32 = blueprints
         .iter()
         .take(3)
-        .map(|&b| max_geodes(b, 32))
+        .map(|&b| max_geodes(&b, 32))
         .product();
     let elapsed = now.elapsed();
     println!("Part2={p2}");
