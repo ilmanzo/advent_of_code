@@ -131,7 +131,6 @@ fn part1(input: &str) -> usize {
             elf.cycle_directions();
         }
     }
-    // display_elves(&elves);
     let min_x = elves.iter().map(|elf| elf.position.0).min().unwrap();
     let max_x = elves.iter().map(|elf| elf.position.0).max().unwrap();
     let min_y = elves.iter().map(|elf| elf.position.1).min().unwrap();
@@ -185,24 +184,3 @@ fn parse_input(input: &str) -> Vec<Elf> {
     }
     elves
 }
-
-// used for debug
-
-/* fn display_elves(elves: &HashMap<Id, Elf>) {
-    let min_x = elves.values().map(|elf| elf.position.0).min().unwrap();
-    let max_x = elves.values().map(|elf| elf.position.0).max().unwrap();
-    let min_y = elves.values().map(|elf| elf.position.1).min().unwrap();
-    let max_y = elves.values().map(|elf| elf.position.1).max().unwrap();
-
-    for y in min_y..=max_y {
-        for x in min_x..=max_x {
-            if elves.values().any(|elf| elf.position == Point(x, y)) {
-                print!("#");
-            } else {
-                print!(".");
-            }
-        }
-        println!();
-    }
-}
- */
