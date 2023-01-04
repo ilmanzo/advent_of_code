@@ -3,7 +3,7 @@ EAST=1
 SUD=2
 WEST=3
 
-facing=0
+facing=NORTH
 posx=0
 posy=0
 deltax=[0,1,0,-1]
