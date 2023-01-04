@@ -12,17 +12,17 @@ deltay=[1,0,-1,0]
 
 STDIN.read.split(", ").each do |direction|
 #  puts direction,posx,posy
-  #p facing
+  p facing
   case direction[0]
     when "R" then
-        facing=(facing+1)%3
+        facing=(facing+1)%4
     when "L" then
         facing==0?3:facing-1
     else
         puts "error"
   end
   dist=direction[1..].to_i
-  p dist 
+  #p dist 
   posx+=dist*deltax[facing]
   posy+=dist*deltay[facing]
 end 
