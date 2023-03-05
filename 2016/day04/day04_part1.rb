@@ -5,3 +5,5 @@ part1=STDIN.each_line.map do |line|
 end.sum
 
 p part1 
+
+    
