@@ -1,0 +1,11 @@
+[package]
+name = "day04_rust"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "day04"
+path = "src/lib.rs"
+
+
+[dependencies]

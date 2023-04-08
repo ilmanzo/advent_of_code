@@ -1,4 +1,4 @@
-use std::{fs, ops::Mul};
+use std::fs;
 
 pub fn get_input(filepath: &str) -> String {
     fs::read_to_string(filepath).expect("can't open input file")
@@ -16,7 +16,7 @@ fn count_tree_slopes(grid: &Vec<&[u8]>, dx: usize, dy: usize) -> usize {
             trees += 1
         }
         x = (x + dx) % width;
-        y = y + dy;
+        y += dy;
     }
     trees
 }
