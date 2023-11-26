@@ -21,5 +21,3 @@ p "part1=#{part1}"
 part2=input.each_line.map { |line| get_evenly_divisible(line)}.sum
 p "part2=#{part2}"
 
-
-
