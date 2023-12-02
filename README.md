@@ -7,8 +7,8 @@ This repo is for all my solutions to the different years of [Advent of Code](htt
 |        | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 |
 | ------ | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | 
 | Day 1  | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ | 
-| Day 2  | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ |      |
-| Day 3  | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ |      | ⭐⭐ | ⭐⭐ | ⭐⭐ |      |
+| Day 2  | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ |
+| Day 3  | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ |      |
 | Day 4  | ⭐⭐ | ⭐⭐ | ⭐⭐ |      |      | ⭐⭐ | ⭐⭐ | ⭐⭐ |      |
 | Day 5  | ⭐⭐ | ⭐⭐ | ⭐⭐ |      |      | ⭐⭐ | ⭐⭐ | ⭐⭐ |      |
 | Day 6  | ⭐⭐ | ⭐⭐ | ⭐⭐ |      |      |      | ⭐⭐ | ⭐⭐ |      |
@@ -32,5 +32,5 @@ This repo is for all my solutions to the different years of [Advent of Code](htt
 | Day 24 |      |      |      |      |      |      | ⭐⭐ | ⭐⭐ |      |
 | Day 25 |      |      |      |      |      |      | ⭐⭐ | ⭐⭐ |      |
 
-## Total stars: 176 ⭐
+## Total stars: 180 ⭐
 
