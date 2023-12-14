@@ -8,8 +8,11 @@ fn main() {
     let mut part2 = 0;
     for ascii_map in INPUT.split("\n\n") {
         let map = ascii_map.parse::<Map>().unwrap();
-        part1 += map.score(1);
-        part2 += map.score(2);
+        let p1=map.score(1);
+        let p2=map.score(2);
+        part1+=p1;
+        part2+=p2;
+        println!("P1={p1}, P2={p2}");
     }
     println!("Part1={part1}, Part2={part2}");
 }
