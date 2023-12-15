@@ -9,7 +9,7 @@ import std.ascii;
 import std.math;
 import std.traits;
 
-struct Board
+class Board
 {
     char[][] data;
     size_t width;
@@ -24,16 +24,16 @@ struct Board
         height = data.length;
     }
 
-    void dup()
-    {
-        data = data.map!(v => v.dup).array;
-    }
+    // void dup()
+    // {
+    //     data = data.dup.map!(v => v.dup).array;
+    // }
 
     public void north()
     {
         foreach (x; 0 .. width)
         {
-            long target = 0;
+            size_t target = 0;
             foreach (y; 0 .. height)
             {
                 if (data[y][x] == 'O')
@@ -57,7 +57,7 @@ struct Board
     {
         foreach (y; 0 .. height)
         {
-            long target = 0;
+            size_t target = 0;
             foreach (x; 0 .. width)
             {
                 if (data[y][x] == 'O')
@@ -82,7 +82,7 @@ struct Board
     {
         foreach (x; 0 .. width)
         {
-            long target = height - 1;
+            size_t target = height - 1;
             foreach_reverse (y; 0 .. height)
             {
                 if (data[y][x] == 'O')
@@ -106,7 +106,7 @@ struct Board
     {
         foreach (y; 0 .. height)
         {
-            long target = width - 1;
+            size_t target = width - 1;
             foreach_reverse (x; 0 .. width)
             {
                 if (data[y][x] == 'O')
@@ -162,11 +162,7 @@ auto part1(string filename)
 size_t part2(string filename)
 {
     auto board1 = new Board(filename);
-    board1.dup();
     auto board2 = new Board(filename);
-    board2.dup();
-    //auto board1 = board.dup();
-    //auto board2 = board.dup();
 
     size_t cycles = 0;
     size_t cyclelength = 0;

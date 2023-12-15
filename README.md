@@ -13,7 +13,7 @@ This repo is for all my solutions to the different years of [Advent of Code](htt
 | Day 5  | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ |      | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ |
 | Day 6  | ⭐⭐ | ⭐⭐ | ⭐⭐ |      |      | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ |
 | Day 7  | ⭐⭐ | ⭐⭐ | ⭐⭐ |      |      | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ |
-| Day 8  | ⭐⭐ | ⭐⭐ | ⭐⭐ |      |      |      | ⭐⭐ | ⭐⭐ | ⭐⭐ |
+| Day 8  | ⭐⭐ | ⭐⭐ | ⭐⭐ |      |      | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ |
 | Day 9  | ⭐⭐ | ⭐⭐ |      |      |      |      | ⭐⭐ | ⭐⭐ | ⭐⭐ |
 | Day 10 | ⭐⭐ | ⭐⭐ |      |      |      |      | ⭐⭐ | ⭐⭐ | ⭐⭐ |
 | Day 11 | ⭐⭐ | ⭐⭐ |      |      |      |      | ⭐⭐ | ⭐⭐ | ⭐⭐ |
@@ -32,5 +32,5 @@ This repo is for all my solutions to the different years of [Advent of Code](htt
 | Day 24 | ⭐⭐ | ⭐⭐ |      |      |      |      | ⭐⭐ | ⭐⭐ |      |
 | Day 25 | ⭐⭐ |      |      |      |      |      | ⭐⭐ | ⭐⭐ |      |
 
-## Total stars: 272 ⭐
+## Total stars: 276 ⭐
 
