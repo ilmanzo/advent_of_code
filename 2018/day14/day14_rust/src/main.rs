@@ -6,7 +6,7 @@ struct Elfrecipe {
 
 impl Elfrecipe {
     fn new() -> Self {
-        Elfrecipe {
+        Self {
             recipes: vec![3, 7],
             elf1: 0,
             elf2: 1,
