@@ -35,9 +35,9 @@ def run(input, id, tx, rx)
   end
 end
   
-input=File.readlines("input.txt")
+#input=File.readlines("input.txt")
 input=File.readlines("sample.txt")
-insts = input.each.map do |l|
+insts = input.map do |l|
   inst, *args = l.split
   [inst.to_sym, *args.map { |a| a.match?(/-?\d+/) ? a.to_i : a.to_sym }].freeze
 end.freeze
