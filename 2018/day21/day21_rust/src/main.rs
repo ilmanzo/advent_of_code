@@ -1,4 +1,3 @@
-use std::io::{self, BufRead};
 use std::collections::HashSet;
 
 #[derive(Copy, Clone, Debug)]
@@ -13,10 +12,6 @@ impl Registers {
             ip: 0,
             registers: [0; 6],
         }
-    }
-
-    fn set_ip(&mut self, s: &str) {
-        self.ip = s.split_whitespace().nth(1).unwrap().parse().unwrap()
     }
 }
 
@@ -65,19 +60,24 @@ fn execute(inst: &Instruction, regs: &mut Registers) {
     }
 }
 
-fn part1() {
-    let stdin = io::stdin();
-    let mut reg = Registers::new();
+fn parse_instructions() -> Vec<Instruction> 
+{
+    let input = include_str!("../../input.txt");
     let mut insts = Vec::new();
-    let mut ip = 0;
-
-    for line in stdin.lock().lines().map(|x| x.unwrap()) {
-        if line.starts_with("#") {
-            reg.set_ip(&line);
-        } else {
+    for line in input.lines() {
+        if !line.starts_with("#") {
             insts.push(Instruction::new(&line));
         }
     }
+    insts
+}
+
+
+fn part1() {
+    let mut reg = Registers::new();
+    let insts = parse_instructions();
+    let mut ip = 0;
+    reg.ip=3;
 
     while ip < insts.len() {
         reg.registers[reg.ip] = ip;
@@ -89,24 +89,16 @@ fn part1() {
         }
     }
 
-    println!("{}", reg.registers[3]);
+    println!("{}", reg.registers[1]);
 }
 
 fn part2() {
-    let stdin = io::stdin();
     let mut reg = Registers::new();
-    let mut insts = Vec::new();
+    let insts = parse_instructions();
     let mut ip = 0;
     let mut seen = HashSet::new();
     let mut last = 0;
-
-    for line in stdin.lock().lines().map(|x| x.unwrap()) {
-        if line.starts_with("#") {
-            reg.set_ip(&line);
-        } else {
-            insts.push(Instruction::new(&line));
-        }
-    }
+    reg.ip=3;
 
     while ip < insts.len() {
         reg.registers[reg.ip] = ip;
@@ -114,12 +106,12 @@ fn part2() {
         ip = reg.registers[reg.ip] + 1;
 
         if reg.registers[reg.ip] == 28 {
-            if seen.get(&reg.registers[3]).is_some() {
+            if seen.get(&reg.registers[1]).is_some() {
                 break;
             }
 
-            seen.insert(reg.registers[3]);
-            last = reg.registers[3];
+            seen.insert(reg.registers[1]);
+            last = reg.registers[1];
         }
     }
 
@@ -129,5 +121,5 @@ fn part2() {
 
 fn main() {
     part1();
-    //part2();
+    part2();
 }
