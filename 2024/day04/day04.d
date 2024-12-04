@@ -10,17 +10,17 @@ void main ()
 
 int part1(string[] a) {
 	int result = 0;
-	foreach (i; 0..4) {	result += search_pt1_a (a, "XMAS"); result += search_pt1_b (a, "XMAS"); a = a.rotate90;	}
+	foreach (i; 0..4) {	result += a.search_h; result += a.search_v; a = a.rotate90;	}
 	return result;
 }
 
 int part2(string[] a) {
 	int result = 0;
-	foreach (i; 0..4) { result += a.search_pt2; a=a.rotate90; }
+	foreach (i; 0..4) { result += a.search_x; a=a.rotate90; }
 	return result;
 }
 
-string [] rotate90 (string [] a)
+pure string [] rotate90 (const string [] a)
 {
 	auto rows = a.length;
 	auto cols = a.front.length;
@@ -29,32 +29,31 @@ string [] rotate90 (string [] a)
 	return result;
 }
 
-int search_pt1_a (string [] a, string p)
+pure int search_h (const string [] a)
 {
 	auto rows = a.length;
 	auto cols = a.front.length;
-	auto len = p.length;
 	int result = 0;
-	foreach (row; 0..rows) foreach (col; 0..cols - len + 1) {result += a[row][col..col + len] == p;}
+	foreach (row; 0..rows) foreach (col; 0..cols - 5) {result += a[row][col..col + 4] == "XMAS";}
 	return result;
 }
 
-int search_pt1_b (string [] a, string p)
+pure int search_v (const string [] a)
 {
 	auto rows = a.length;
 	auto cols = a.front.length;
-	auto len = p.length;
 	int result = 0;
-	foreach (row; 0..rows - len + 1) foreach (col; 0..cols - len + 1)
+	const XMAS="XMAS";
+	foreach (row; 0..rows - 5) foreach (col; 0..cols - 5)
 		{
 			bool found = true;
-			foreach (i; 0..len)	found &= (a[row + i][col + i] == p[i]);
+			foreach (i; 0..4)	found &= (a[row + i][col + i] == XMAS[i]);
 			result += found;
 		}
 	return result;
 }
 
-int search_pt2 (string [] a)
+pure int search_x (const string [] a)
 {
 	auto rows = a.length;
 	auto cols = a.front.length;
