@@ -10,7 +10,7 @@ void main ()
 
 int part1(string[] a) {
 	int result = 0;
-	foreach (i; 0..4) {	result += a.search_h; result += a.search_v; a = a.rotate90;	}
+	foreach (i; 0..4) {	result += a.search_h+a.search_v; a = a.rotate90;	}
 	return result;
 }
 
