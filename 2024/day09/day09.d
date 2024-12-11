@@ -10,14 +10,14 @@ void main ()
 }
 
 pure long checksum(const int[] disk) {
-    long result = 0;
+    ulong result = 0;
     foreach (i, x; disk) result += i * x;
     return result;
 }
 
 pure getValue(const int i) { return (i & 1) ? EMPTY : (i >> 1); }
 
-pure long part1(const uint[] input) {
+pure ulong part1(const uint[] input) {
   int [] disk;
   foreach (int i, ref x; input) disk ~= i.getValue.repeat(x).array;
   int pos = 0;
@@ -31,11 +31,11 @@ pure long part1(const uint[] input) {
  return disk.checksum;
 }
 
-pure long part2(const uint[] input) {
+pure ulong part2(const uint[] input) {
 	alias File = Tuple!(int, "id", int, "len");
 	File [] disk;
 	foreach (int i, ref x; input) disk ~= File (i.getValue, x);
-	for (int i = disk.length.to !(int) - 1; i >= 0; i--) if (disk[i].id != EMPTY)
+  for (int i = disk.length.to !(int) - 1; i >= 0; i--) if (disk[i].id != EMPTY)
 		foreach (j; 0..i) if (disk[j].id == EMPTY && disk[j].len >= disk[i].len)
 		{
 			disk[j].len -= disk[i].len;

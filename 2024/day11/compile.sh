@@ -1,0 +1,1 @@
+ldmd2 day11.d -boundscheck=off -mcpu=native -O3
