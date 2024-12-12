@@ -1,9 +1,13 @@
+require "benchmark"
+
 FILENAME = "input.txt"
 # FILENAME = "sample.txt"
 d12_p1 = Day12.new FILENAME, 1
 d12_p2 = Day12.new FILENAME, 2
-p d12_p1.run
-p d12_p2.run
+t1=Benchmark.realtime{p d12_p1.run}
+t2=Benchmark.realtime{p d12_p2.run}
+p "Time for part1: #{t1.microseconds} µs"
+p "Time for part2: #{t2.microseconds} µs"
 
 class Day12
   DIRS = [{0, 1}, {0, -1}, {1, 0}, {-1, 0}]
