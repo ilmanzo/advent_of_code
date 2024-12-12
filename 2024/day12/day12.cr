@@ -1,7 +1,7 @@
 FILENAME = "input.txt"
 # FILENAME = "sample.txt"
-d = Day12.new FILENAME
-p d.run
+d12 = Day12.new FILENAME
+p d12.run
 
 class Day12
   DIRS = [{0, 1}, {0, -1}, {1, 0}, {-1, 0}]
@@ -9,14 +9,14 @@ class Day12
   @grid : Array(Array(Char))
 
   def initialize(filename)
-    @grid = File.read_lines(filename).map(&.chomp).map(&.chars)
-    @h = @grid.size
-    @w = @grid.first.size
+    @grid = File.read_lines(filename).map(&.chars)
+    @height = @grid.size
+    @width = @grid.first.size
     @seen = Set(Point).new
   end
 
   def peek(x : Int32, y : Int32)
-    x < 0 || y < 0 || x >= @w || y >= @h ? '*' : @grid[y][x]
+    x < 0 || y < 0 || x >= @width || y >= @height ? '*' : @grid[y][x]
   end
 
   def score(x : Int32, y : Int32, c : Char)
@@ -42,8 +42,8 @@ class Day12
 
   def run
     total = 0
-    @h.times do |y|
-      @w.times do |x|
+    @height.times do |y|
+      @width.times do |x|
         area, perimeter = score(x, y, peek(x, y))
         total += area * perimeter
       end
