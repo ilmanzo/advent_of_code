@@ -3,12 +3,12 @@ import std;
 alias Point=Tuple!(long, "x", long, "y");
 
 pure long solve(Point a, Point b, Point c) {
-		auto a1=a.x, b1=b.x, c1=-c.x;
-		auto a2=a.y, b2=b.y, c2=-c.y;
-		auto x=b1*c2-c1*b2, y=c1*a2-a1*c2, z=a1*b2-b1*a2;
-		if (x % z != 0 || y % z != 0) return 0;
-		x /= z; y /= z;
-		return (x>=0 && y>=0)?x*3+y:0;
+	auto a1=a.x, b1=b.x, c1=-c.x;
+	auto a2=a.y, b2=b.y, c2=-c.y;
+	auto x=b1*c2-c1*b2, y=c1*a2-a1*c2, z=a1*b2-b1*a2;
+	if (x % z != 0 || y % z != 0) return 0;
+	x /= z; y /= z;
+	return (x>=0 && y>=0)?x*3+y:0;
 }
 
 void main ()
