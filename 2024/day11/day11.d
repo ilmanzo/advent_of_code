@@ -9,6 +9,7 @@ void main()
     input.map!(x => fastblink(x, 25)).sum.writeln;
     writeln("Time for part1:", sw.peek());
     input.map!(x => fastblink(x, 75)).sum.writeln;
+    sw.reset();
     writeln("Time for part2:", sw.peek());
 }
 
