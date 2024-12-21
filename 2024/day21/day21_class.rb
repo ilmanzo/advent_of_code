@@ -35,7 +35,7 @@ class Day21
 
     def get_moves(from, to, avoid=V[0, 0])
         d = to-from
-        dx,dy = d[0],d[1]
+        dy,dx = d[0],d[1]
         arrows = dx>0?('>'*dx):('<'*-dx)
         arrows +=dy>0?('v'*dy):('^'*-dy)
         moves = arrows.chars.permutation.to_a.uniq.filter{|s|!s.map{DIR[_1]}.reduce([from]){_1+[_1.last+_2]}.any?{_1==avoid}}.map{_1.join+'a'}
