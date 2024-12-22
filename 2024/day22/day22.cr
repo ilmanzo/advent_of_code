@@ -1,3 +1,5 @@
+require "benchmark"
+
 def mix(x, y) : Int64; x ^ y; end
 def prune(x) : Int64; x % 16777216; end
 
@@ -23,16 +25,18 @@ end
 
 FILENAME = "input.txt"
 #FILENAME = "sample.txt"
-
 part1 = 0_i64
 score = Hash(Array(Int64), Int64).new { |hash, key| hash[key] = 0 }
-File.read_lines(FILENAME, chomp:true).each do |line|
-  p = prices(line.to_i64)
-  part1 += p.last
-  p = p.map { |x| x % 10 }
-  changes = p.each_cons(2).map { |pair| pair[1]-pair[0] }.to_a
-  scores(p, changes).each { |k, v| score[k] += v }
-end
 
+t=Benchmark.realtime do
+    File.read_lines(FILENAME, chomp:true).each do |line|
+    p = prices(line.to_i64)
+    part1 += p.last
+    p = p.map { |x| x % 10 }
+    changes = p.each_cons(2).map { |pair| pair[1]-pair[0] }.to_a
+    scores(p, changes).each { |k, v| score[k] += v }
+    end
+end
+p "Time: #{t.milliseconds} ms"
 puts part1
 puts score.values.max
