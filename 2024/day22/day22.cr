@@ -23,8 +23,8 @@ def scores(p, c)
   result
 end
 
-FILENAME = "input.txt"
-#FILENAME = "sample.txt"
+#FILENAME = "input.txt"
+FILENAME = "sample.txt"
 part1 = 0_i64
 score = Hash(Array(Int64), Int64).new { |hash, key| hash[key] = 0 }
 
