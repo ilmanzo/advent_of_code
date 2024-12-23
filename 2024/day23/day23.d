@@ -16,11 +16,12 @@ void main(string[] args) {
         auto a = xs[i];
         for (int j = i + 1; j < xs.length; j++) {
             auto b = xs[j];
-            for (int k = j + 1; k < xs.length; k++) {
-                auto c = xs[k];
-                if ((a[0]=='t' || b[0]=='t' || c[0]=='t') && 
-                   (conns[b].canFind(a) && conns[c].canFind(a) && conns[c].canFind(b))) part1++;
-            }
+            if (conns[b].canFind(a)) 
+                for (int k = j + 1; k < xs.length; k++) {
+                    auto c = xs[k];
+                    if ((a[0]=='t' || b[0]=='t' || c[0]=='t') && 
+                    (conns[c].canFind(a) && conns[c].canFind(b))) part1++;
+                }
         }
     }
     part1.writeln;
