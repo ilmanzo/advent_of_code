@@ -18,8 +18,8 @@ void main(string[] args) {
             auto b = xs[j];
             for (int k = j + 1; k < xs.length; k++) {
                 auto c = xs[k];
-                if (conns[b].canFind(a) && conns[c].canFind(a) && conns[c].canFind(b) 
-                    && (a[0]=='t' || b[0]=='t' || c[0]=='t')) part1++;
+                if ((a[0]=='t' || b[0]=='t' || c[0]=='t') && 
+                   (conns[b].canFind(a) && conns[c].canFind(a) && conns[c].canFind(b))) part1++;
             }
         }
     }
