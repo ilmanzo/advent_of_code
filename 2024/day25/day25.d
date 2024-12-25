@@ -1,20 +1,22 @@
 import std;
+import std.datetime.stopwatch;
 
-pure bool good(const string[] lock, const string[] key)
+pure uint match(const string[] lock, const string[] key)
 {
-        foreach (i; 0..lock.length)
-                foreach (j; 0..lock.front.length)
-                        if (lock[i][j] == '#' && key[i][j] == '#')
-                                return false;
-        return true;
+    foreach (y; 0 .. 6)
+        foreach (x; 0 .. 5)
+            if (lock[y][x] == '#' && key[y][x] == '#')
+                return 0;
+    return 1;
 }
 
-void main ()
+void main()
 {
-        auto input = stdin.byLineCopy.array.split("");
-        auto locks = input.filter!(s => s.front.all!("a == '#'"));
-        auto keys = input.filter!(s => s.back.all!("a == '#'"));
-        auto part1 = 0;
-        foreach (l; locks) foreach (k; keys) if (good(l,k)) part1++;
-        part1.writeln;
+    string[][] locks,keys;
+    foreach(l;stdin.byLineCopy.array.split("")) if(l[0].startsWith('#')) locks~=l; else keys~=l;
+    uint part1 = 0;
+    auto sw=StopWatch(AutoStart.yes);
+    foreach (ref l; locks) foreach (ref k; keys) part1+=match(l, k);
+    writeln("Time for part1 (naive): ",sw.peek);
+    part1.writeln;
 }
