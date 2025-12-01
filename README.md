@@ -32,4 +32,4 @@ This repo is for all my solutions to the different years of [Advent of Code](htt
 | Day 24 | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ |    |
 | Day 25 | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ |    |
 
-## Total stars: 500 ⭐
+## Total stars: 502 ⭐
